@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\digis\Documents\Leonardo Blancas Uribe\LBlancasCRUDGIT\DL\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\ALIEN22\Source\Repos\LBlancasCRUDGIT\DL\CrudGit.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
