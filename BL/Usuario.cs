@@ -105,11 +105,9 @@ namespace BL
                         int rowsAffected = context.SaveChanges();
                         if (rowsAffected > 0)
                         {
-                            var query = (from a in contex.USUARIOs
-                                         where a.IdUsuario == IdUsuario
-                                         select a).First();
-                            contex.USUARIOs.Remove(query);
-                            contex.SaveChanges();
+                            
+                            context.USUARIOs.Remove(query);
+                            context.SaveChanges();
                             result.Correct = true;
                         }
                         else

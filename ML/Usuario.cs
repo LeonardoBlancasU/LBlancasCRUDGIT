@@ -12,7 +12,7 @@ namespace ML
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string FechaNacimiento { get; set; }
-        public List<object> Usuarios { get; set; }
+        public List<object> Usuarios{ get; set; }
 
     }
 }

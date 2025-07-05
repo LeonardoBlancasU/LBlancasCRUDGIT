@@ -16,4 +16,51 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="table-responsive">
+        <div ="col-md-12"></div>
+        @if (Model.Usuarios != null)
+        {
+            <table class="table table-hover">
+                <tehead>
+                    <tr>
+                        <th>Editar</th>
+       
+                        <th>IdUsuario</th>
+                        <th>Nombre</th>
+                        <th>FechaNacimiento</th>
 
+                        <th>Eliminar</th>
+                    </tr>
+                </tehead>
+                <tbody>
+                    @foreach (ML.Usuario usuario in Model.Usuarios)
+                    {
+                        <tr>
+                            <td>
+                                <a href="@Url.Action("Formulario","Usuario", new {IdUsuario=usuario.IdUsuario})">
+                                    <i class="bi bi-pencil-square" style="font-size: 2em;"></i>
+                                </a>
+                            </td>
+                            <th scope="row">@usuario.IdUsuario</th>
+                            <td>@usuario.Nombre <br /> @usuario.Apellido </td>
+                            <td>@usuario.FechaNacimiento</td>
+                            <td>
+                                <a href="@Url.Action("Delete","Usuario", new {IdUsuario=usuario.IdUsuario})" onclick="alert('¡Esta seguro de eliminar este usuario!')">
+                                    <i class="bi bi-trash" style="font-size: 2em;"></i>
+                                </a>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="alert alert-danger" role="alert">
+                Ha ocurrido un error!
+            </div>
+        }
+    </div>
+</div>
