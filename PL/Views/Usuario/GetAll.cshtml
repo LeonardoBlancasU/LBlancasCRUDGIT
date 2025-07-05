@@ -14,39 +14,34 @@
     <div class="col-md-6 col-sm-12 ms-2">
         <a href="@Url.Action("Formulario", "Usuario")"> <i class="bi bi-person-add" style="font-size: 3em; color:forestgreen"></i></a>
     </div>
+    @*@Html.ActionLink("+", "Formulario", "Usuario", new {@class = "btn btn-success"})*@
 </div>
 
 <div class="row">
     <div class="table-responsive">
-        <div ="col-md-12"></div>
+
         @if (Model.Usuarios != null)
         {
             <table class="table table-hover">
                 <tehead>
                     <tr>
-                        <th>Editar</th>
-       
-                        <th>IdUsuario</th>
-                        <th>Nombre</th>
-                        <th>FechaNacimiento</th>
+                        <td>Editar</td>
+                        <td>Nombre</td>
+                        <td>FechaNacimiento</td>
 
-                        <th>Eliminar</th>
+                        <td>Eliminar</td>
                     </tr>
                 </tehead>
                 <tbody>
                     @foreach (ML.Usuario usuario in Model.Usuarios)
                     {
                         <tr>
-                            <td>
-                                <a href="@Url.Action("Formulario","Usuario", new {IdUsuario=usuario.IdUsuario})">
-                                    <i class="bi bi-pencil-square" style="font-size: 2em;"></i>
-                                </a>
-                            </td>
-                            <th scope="row">@usuario.IdUsuario</th>
+                            <td>@Html.ActionLink("Editar", "Formulario", "Usuario", new { IdUsuario = usuario.IdUsuario }, new { @class = "btn btn-warning" })</td>
+                            >
                             <td>@usuario.Nombre <br /> @usuario.Apellido </td>
                             <td>@usuario.FechaNacimiento</td>
                             <td>
-                                <a href="@Url.Action("Delete","Usuario", new {IdUsuario=usuario.IdUsuario})" onclick="alert('¡Esta seguro de eliminar este usuario!')">
+                                <a href="@Url.Action("Delete","Usuario", new {IdUsuario = usuario.IdUsuario})" onclick="alert('¡Esta seguro de eliminar este usuario!')">
                                     <i class="bi bi-trash" style="font-size: 2em;"></i>
                                 </a>
                             </td>

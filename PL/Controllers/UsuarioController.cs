@@ -71,7 +71,7 @@ namespace PL.Controllers
             }
             return View(usuario);
         }
-        [HttpDelete]
+        [HttpGet]
         public ActionResult Delete(int IdUsuario) 
         {
             ML.Result result = BL.Usuario.Delete(IdUsuario);

@@ -149,15 +149,12 @@ namespace BL
                                        }).SingleOrDefault();
                     if (usuariobyid != null)
                     {
-                        result.Objects = new List<object>();
-
-
                         ML.Usuario usuario = new ML.Usuario();
                         usuario.IdUsuario = usuariobyid.IdUsuario;
                         usuario.Nombre = usuariobyid.Nombre;
                         usuario.Apellido = usuariobyid.Apellido;
-                        usuario.FechaNacimiento = (usuariobyid.FechaNacimiento).ToString();
-
+                        usuario.FechaNacimiento = (usuariobyid.FechaNacimiento).Value.ToString("yyyy-MM-dd");
+                        result.Object = usuario;
                         result.Correct = true;
                     }
                     else
