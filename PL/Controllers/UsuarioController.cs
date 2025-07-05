@@ -14,7 +14,14 @@ namespace PL.Controllers
         [HttpGet]
         public ActionResult GetAll()
         {
-            return View();
+            ML.Usuario usuario = new ML.Usuario();
+            ML.Result result = BL.Usuario.GetAll();
+            if (result.Correct)
+            {
+                usuario.Usuarios = result.Objects;
+            }
+
+            return View(usuario);
         }
 
         [HttpGet]
@@ -49,12 +56,33 @@ namespace PL.Controllers
                     TempData["Error"] = "Error al agregar el Usuario" + result.ErrorMessage;
                 }
             }
+            else
+            {
+                result = BL.Usuario.Update(usuario);
+                if(result.Correct == true)
+                {
+                    TempData["Success"] = "Usuario Actualizado Correctamente";
+                    return RedirectToAction("GetAll");
+                }
+                else
+                {
+                    TempData["Error"] = "Error al actualizar el Usuario" + result.ErrorMessage;
+                }
+            }
             return View(usuario);
         }
         [HttpDelete]
         public ActionResult Delete(int IdUsuario) 
         {
-
+            ML.Result result = BL.Usuario.Delete(IdUsuario);
+            if(result.Correct == true)
+            {
+                TempData["Success"] = "Usuario Eliminado Correctamente";
+            }
+            else
+            {
+                TempData["Error"] = "Error al eliminar el Usuario" + result.ErrorMessage;
+            }
             return RedirectToAction("GetAll");
         }
     }
