@@ -25,27 +25,27 @@
         <div class="col-12 col-md-6 col-lg-4 mb-3">
             @Html.LabelFor(model => model.Nombre, new { @class = "form-label" })
             <div class="input-group mb-3 has-validation">
-                <span class="input-group-text bi bi-pen-fill" id="basic-addon1"></span>
-                @Html.TextBoxFor(model => model.Nombre, new { required = "required", placeholder = "Ingresa un UserName", @class = "form-control", @id = "txtUserName", @onkeydown = "return ValidarUserName(event, 'lblErrorUserName', 'txtUserName', '8')", @onblur = "AgregarGuion(event, 'txtUserName')" })
+                <span class="input-group-text bi bi-person" id="basic-addon1" style="color: #006eff"></span>
+                @Html.TextBoxFor(model => model.Nombre, new { required = "required", placeholder = "Ingresa un Nombre", @class = "form-control", @id = "txtUserName", @onkeydown = "return ValidarUserName(event, 'lblErrorUserName', 'txtUserName', '8')", @onblur = "AgregarGuion(event, 'txtUserName')" })
             </div>
             @Html.LabelFor(model => model.Apellido, new { @class = "form-label" })
             <div class="input-group mb-3 has-validation">
-                <span class="input-group-text bi bi-pen-fill" id="basic-addon1"></span>
-                @Html.TextBoxFor(model => model.Apellido, new { required = "required", placeholder = "Ingresa un UserName", @class = "form-control", @id = "txtUserName", @onkeydown = "return ValidarUserName(event, 'lblErrorUserName', 'txtUserName', '8')", @onblur = "AgregarGuion(event, 'txtUserName')" })
+                <span class="input-group-text bi bi-person" id="basic-addon1" style="color: #006eff"></span>
+                @Html.TextBoxFor(model => model.Apellido, new { required = "required", placeholder = "Ingresa un Apellido", @class = "form-control", @id = "txtUserName", @onkeydown = "return ValidarUserName(event, 'lblErrorUserName', 'txtUserName', '8')", @onblur = "AgregarGuion(event, 'txtUserName')" })
             </div>
             @Html.LabelFor(model => model.FechaNacimiento, new { @class = "form-label" })
             <div class="input-group mb-3 has-validation">
-                <span class="input-group-text bi bi-pen-fill" id="basic-addon1"></span>
+                <span class="input-group-text bi bi-calendar3" id="basic-addon1" style="color: #006eff"></span>
                 @Html.TextBoxFor(model => model.FechaNacimiento, new { required = "required", @type = "date", @class = "form-control", @id = "txtUserName", @onkeydown = "return ValidarUserName(event, 'lblErrorUserName', 'txtUserName', '8')", @onblur = "AgregarGuion(event, 'txtUserName')" })
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-12">
-                <input type="submit" value="Guardar" class="btn btn-success" id="btnGuardar" />
+            <div class="col-2">
+                <input type="submit" value="Guardar" class="btn btn-outline-success" id="btnGuardar" />
             </div>
 
-            <div class="col-12">
-                @Html.ActionLink("Regresar", "GetAll", "Usuario", new { @class = "btn btn-danger" })
+            <div class="col-2">
+                @Html.ActionLink("Regresar", "GetAll", "Usuario", new { @class = "btn btn-outline-danger" })
             </div>
 
 
