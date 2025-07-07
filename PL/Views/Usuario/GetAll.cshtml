@@ -3,6 +3,9 @@
     ViewBag.Title = "GetAll";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <div class="row">
     <div class="col-md-12">
@@ -22,13 +25,13 @@
 
         @if (Model.Usuarios != null)
         {
-            <table class="table table-hover" >
+            <table class="table table-hover">
                 <tehead>
                     <tr>
-                        <td>Editar</td>
-                        <td>Nombre</td>
-                        <td>FechaNacimiento</td>
-                        <td>Eliminar</td>
+                        <th>Editar</th>
+                        <th>Nombre</th>
+                        <th>FechaNacimiento</th>
+                        <th>Eliminar</th>
                     </tr>
                 </tehead>
                 <tbody>
@@ -36,7 +39,7 @@
                     {
                         <tr>
                             <td>@Html.ActionLink("Editar", "Formulario", "Usuario", new { IdUsuario = usuario.IdUsuario }, new { @class = "btn btn-info" })</td>
-                            
+
                             <td>@usuario.Nombre <br /> @usuario.Apellido </td>
                             <td>@usuario.FechaNacimiento</td>
                             <td>
