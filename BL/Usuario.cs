@@ -154,7 +154,6 @@ namespace BL
                         usuario.Nombre = usuariobyid.Nombre;
                         usuario.Apellido = usuariobyid.Apellido;
                         usuario.FechaNacimiento = (usuariobyid.FechaNacimiento).Value.ToString("yyyy-MM-dd");
-                        
                         result.Object = usuario;
                         result.Correct = true;
                     }
